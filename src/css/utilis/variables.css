@@ -1,0 +1,33 @@
+:root{
+
+    /* Color styles */
+--noir-titre: #222323;
+--noir-texte: #000000;
+--blanc-menuheaderfooter: #FFFFFF;
+--rougefooter: #FF4040;
+--grisbarre: #7C7C7C;
+--gristitre: #CECECE;
+--bleu: #2648FF;
+--grisfooter: #575757;
+--bleumenu: #09B1E5;
+--fond: #E9E9E9;
+
+    /* Texte-size styles */
+--titreh1 : 30px
+--titreh2 : 24px
+--titreh3 : 32px
+--texte-body : 15px
+--texte-légende : 15px
+
+/* Typography */
+--aramey: 'Arapey', serif;
+--nunito: 'Nunito Sans', sans-serif;
+
+/* Font-weight */
+--regular: 400;
+--medium: 500;
+--bold: 700;
+
+/* Text styles */
+--italic: italic;
+}

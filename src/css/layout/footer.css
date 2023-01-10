@@ -1,0 +1,114 @@
+footer{
+    position: absolute;
+width: 375px;
+height: 352px;
+left: 0px;
+background: #f2f2f2;
+}
+
+.footericon{
+    position: absolute;
+width: 34px;
+height: 60px;
+left: 25px;
+top: 20px;
+}
+
+footer a{
+    font-size: 15px;
+    font-family: var(--nunito)
+}
+
+.footertexteicon{
+    position: absolute;
+    width: 249px;
+    height: 32px;
+    left: 79px;
+    top: 37px;
+    
+    font-family: 'Arapey';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    
+    color: #000000;
+}
+
+.footertexte1{
+    position: absolute;
+width: 108px;
+height: 20px;
+left: 25px;
+top: 138px;
+
+font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+
+color: #000000;
+}
+
+.footertexte2{
+    position: absolute;
+width: 206px;
+height: 20px;
+left: 25px;
+top: 171px;
+
+font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+
+color: #000000;
+}
+
+.footertexte3{
+    position: absolute;
+width: 108px;
+height: 20px;
+left: 25px;
+top: 204px;
+
+font-family: 'Nunito Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+
+color: #000000;
+}
+
+.ligne1{
+    position: absolute;
+width: 22px;
+height: 0px;
+left: 28.9px;
+top: 109.5px;
+
+border: 1px solid #000000;
+}
+
+.ligne2{
+    position: absolute;
+width: 22px;
+height: 0px;
+left: 28.9px;
+top: 252.5px;
+
+border: 1px solid #000000;
+}
+
+.icons{
+    width: 37px;
+    padding-top: 280px;
+margin: 0 10px;
+}
+
+.icons:first-child{
+    padding-left: 40px;
+}
