@@ -17,6 +17,14 @@
     <header>
         <a href="./index.html"><img class="icon" src="./public/img/Header/Icone.svg" alt="Icône du site"></a>
         <a href="./index_ENG.html"><img class="fricon" src="./public/img/Header/france 1.webp" alt="Icône de France"></a>
+        <div x-data="{ open: false }">
+            <button @click="open = !open"><img class="menu" src="./public/icones/menu.svg" alt="Menu burger"></button>
+            <ul x-show="open" @click.away="open = false">
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#">À Propos</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
     </header>
 </body>
 </html>
