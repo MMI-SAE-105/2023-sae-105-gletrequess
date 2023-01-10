@@ -35,3 +35,12 @@ header {
 button {
     border: none;
 }
+
+span{
+    content: "a";
+    display: block;
+    opacity: 1;
+    width: 40px;
+    height: 5px;
+    background-color: black;
+}
