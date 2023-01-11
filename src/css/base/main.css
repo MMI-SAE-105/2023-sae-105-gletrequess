@@ -7,18 +7,35 @@ span{
     background-color: black;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 footer a{
     text-decoration: none;
 }
 
 body{
     padding-top: 100px;
+    overflow-x: hidden;
+}
+
+h1{
+    font-family: 'Arapey', sans-serif;
+    font-size: 36px;
+}
+
+h2{
+    font-family: 'Arapey', sans-serif;
+    font-size: 24px;
 }
 
 h3{
     font-family: 'Arapey', sans-serif;
+    font-size: 20px;
 }
 
 p{
     font-family: 'Arapey', sans-serif;
+    font-size: 15px;
 }

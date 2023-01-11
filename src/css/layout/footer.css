@@ -4,6 +4,7 @@ width: 375px;
 height: 352px;
 left: 0px;
 background: #f2f2f2;
+overflow-x: hidden;
 }
 
 .footericon{
