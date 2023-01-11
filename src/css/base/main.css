@@ -48,3 +48,36 @@ li{
     font-size: 15px;
     margin: 20px;
 }
+
+.Artiste h3{
+    text-align: center;
+  }
+
+hr{
+    border-top: solid #000000;
+    margin: auto;
+    border-width: 2px 0 0 0;
+    width: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+figcaption{
+    font-family: 'Arapey', sans-serif;
+    font-size: 15px;
+    margin: 20px;
+}
+
+.Artiste .black-button{
+    left: 50%; /* center horizontally */
+    transform: translateX(70%); /* move the button 50% to the left */
+}
+
+.Oeuvre h1{
+    text-align: center;
+    margin: 30px 0px;
+}
+
+.Oeuvre p{
+    text-align: center;
+}

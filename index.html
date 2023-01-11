@@ -20,11 +20,16 @@
         <a href="./index.html"><img class="icon" src="./public/img/Header/Icone.svg" alt="Icône du site"></a>
         <a href="./index_ENG.html"><img class="fricon" src="./public/img/Header/france 1.webp" alt="Icône de France"></a>
         <div x-data="{ open: false }">
-            <button @click="open = !open">Menu</button>
-            <ul x-show="open" @click.away="open = false">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+            <button @click="open = !open">         
+                 <div class="nav-toggle" onclick="documentElement.classList.toggle('menu-open')">
+                <div class="nav-toggle-bar"></div>
+            </div></button>
+            <ul class="menu" x-show="open" @click.away="open = false" x-transition.opacity.duration.300ms>
+              <li><a href="./Ann_Hamilton.html">Ann Hamilton</a></li>
+              <li><a href="./Anish_Kapoor.html">Anish Kapoor</a></li>
+              <li><a href="./Mona_Hatoum.html">Mona Hatoum</a></li>
+              <li><a href="./Richard_Serra.html">Richard Serra</a></li>
+              <li><a href="./Erreur404.html">Billetterie</a></li>
             </ul>
           </div>
           

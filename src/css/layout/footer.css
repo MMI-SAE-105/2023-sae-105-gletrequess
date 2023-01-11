@@ -8,6 +8,17 @@ background: #f2f2f2;
 overflow: hidden;
 }
 
+.Artiste footer{
+    margin-top: 35em;
+    position: absolute;
+    width: 375px;
+    height: 352px;
+    left: 0px;
+    background: #f2f2f2;
+    overflow: hidden;
+}
+
+
 .footericon{
     position: absolute;
 width: 34px;
