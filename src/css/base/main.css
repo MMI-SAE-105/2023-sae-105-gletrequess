@@ -11,10 +11,14 @@ footer a{
     text-decoration: none;
 }
 
-html{
-    width: 375px;
+body{
+    padding-top: 100px;
 }
 
-body{
-    width: 375px;
+h3{
+    font-family: 'Arapey', sans-serif;
+}
+
+p{
+    font-family: 'Arapey', sans-serif;
 }
