@@ -1,0 +1,18 @@
+[[plugins]]
+ package = "@netlify/plugin-lighthouse"
+ 
+  [[plugins.inputs.audits]]
+    output_path="reports/accueil.html"
+    path = "index.html" #la racine du site
+
+  [[plugins.inputs.audits]]
+    output_path="reports/artiste.html"
+    path = "Ann_Hamilton.html" #la racine du site
+
+  [[plugins.inputs.audits]]
+    output_path="reports/oeuvre.html"
+    path = "Ann_Hamilton_oeuvre1.html" #la racine du site
+
+  [[plugins.inputs.audits]]
+    output_path="reports/contact.html"
+    path = "Contact.html" #la racine du site
