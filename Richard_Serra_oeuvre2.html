@@ -1,12 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./img/squareicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Oeuvre 2 - Richard Serra | Nouvelle Ère</title>
+    <link rel="shortcut icon" href="./public/img/squareicon.png" type="image/x-icon">
+    <!-- Importation x-collapse /!\ À IMPORTER AVANT ALPINE.JS /!\-->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js%22%3E"></script>
+    <!-- Importation Alpine.js /!\ À IMPORTE APRÈS X-COLLAPSE-->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Tailwind css -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/style.css">
     
+</head>
+<body style="margin: 0; background: #f8f7f1" class="Oeuvre">
+    <header>
+        <a href="./index.html"><img class="icon" src="./public/img/Header/Icone.svg" alt="Icône du site"></a>
+        <a href="./index_ENG.html"><img class="fricon" src="./public/img/Header/france 1.webp" alt="Icône de France"></a>
+        <div x-data="{ open: false }">
+            <button @click="open = !open">         
+                 <div class="nav-toggle" onclick="documentElement.classList.toggle('menu-open')">
+                <div class="nav-toggle-bar"></div>
+            </div></button>
+            <ul class="menu" x-show="open" @click.away="open = false" x-transition.opacity.duration.300ms>
+              <li><a href="./Ann_Hamilton.html">Ann Hamilton</a></li>
+              <li><a href="./Anish_Kapoor.html">Anish Kapoor</a></li>
+              <li><a href="./Mona_Hatoum.html">Mona Hatoum</a></li>
+              <li><a href="./Richard_Serra.html">Richard Serra</a></li>
+              <li><a href="./Erreur404.html">Billetterie</a></li>
+            </ul>
+          </div>
+          
+    </header>
+
+    <h1>Tilted Spheres</h1>
+
+    <img src="./public/img/Oeuvres/RichardSerra/oeuvre1.webp" alt="Tilted Spheres">
+    <p>
+        Cette installation datant de 2006 met en avant un style post-minimaliste à travers quatre structures d'un métal sombre, regroupées deux par deux et courbées de manière à créer une forme sphérique.
+    </p>
+    <footer>
+        <div>
+            <img class="footericon" src="./public/img/Accueil/Icone 2.webp" alt="Icône site">
+            <p class="footertexteicon">
+                L'Ère
+                Post‑minimaliste
+            </p>
+        </div>
+
+        <img class="ligne1" src="./public/img/Footer/line10.svg" alt="HR">
+
+        <a class="footertexte1" href="./index.html">Accueil</a>
+        <a class="footertexte2" href="./Erreur404.html">Billetterie</a>
+        <a class="footertexte3" href="./Contact_html">Contact</a>
+
+        <img class="ligne2" src="./public/img/Footer/line11.svg" alt="HR">
+
+        <div class="icons2">
+            <a href="https://www.facebook.com/"><img class="icons" src="./public/icones/twitter.webp" alt="Twitter"></a>
+            <a href="https://twitter.com/"><img class="icons" src="./public/icones/facebook.webp" alt="Facebook"></a>
+            <a href="https://www.instagram.com/"><img class="icons" src="./public//icones/insta.webp" alt="Insta"></a>
+        </div>
+
+    </footer>
 </body>
 </html>
