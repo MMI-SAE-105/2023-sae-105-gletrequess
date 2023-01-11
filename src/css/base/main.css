@@ -10,3 +10,11 @@ span{
 footer a{
     text-decoration: none;
 }
+
+html{
+    width: 375px;
+}
+
+body{
+    width: 375px;
+}
