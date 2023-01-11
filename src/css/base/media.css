@@ -11,8 +11,22 @@
     min-width: 375px;
 }
 
-.img_container{
+.img_container2 {
     position: relative;
+    margin-top: 0;
+  }
+
+  .cadre-container {
+    position: relative;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+
+.marginimagearticle2{
+    margin-bottom: 11em;
 }
 
 .text_container{
@@ -21,3 +35,50 @@
     left: 20px;
     color: white;
 }
+
+.img_container1{
+    position: relative;
+}
+
+body {
+    margin: 0; /* pour supprimer les marges par défaut */
+  }
+  
+  .image-container {
+    position: relative;
+    margin-top: 13em;
+  }
+  
+  img {
+    width: 100%; /* pour prendre toute la largeur de la page */
+  }
+  
+  .overlay {
+    position: absolute; /* pour placer le rectangle gris sur l'image */
+    top: calc(50% + 50px); /* pour placer le rectangle gris en-dessous de l'image */
+    left: 50%; /* pour centrer horizontalement le rectangle gris */
+    transform: translateX(-50%); /* pour centrer horizontalement le rectangle gris */
+    width: 80%; /* pour prendre moins de largeur que l'image */
+    max-width: 600px; /* pour limiter la largeur maximale du rectangle gris */
+    background-color: #D9D9D9; /* pour le rectangle gris */
+    display: flex; /* pour centrer verticalement le contenu */
+    align-items: center; /* pour centrer verticalement le contenu */
+    justify-content: center; /* pour centrer horizontalement le contenu */
+  }
+  
+  .text-container {
+    padding: 20px; /* pour l'espacement entre le contenu et les bords */
+    text-align: center; /* pour centrer le texte horizontalement */
+  }
+  
+  .text-container p {
+    margin-bottom: 10px; /* pour l'espacement entre le texte et le bouton */
+    color: rgb(0, 0, 0); /* pour un texte en blanc */
+  }
+  
+  .more-info-button {
+    background-color: black; /* pour un fond noir */
+    color: white; /* pour un texte en blanc */
+    padding: 10px 20px; /* pour les dimensions du bouton */
+    border: none; /* pour enlever les bordures par défaut */
+  }

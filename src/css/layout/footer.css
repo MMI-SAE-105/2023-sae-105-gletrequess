@@ -1,10 +1,11 @@
 footer{
+    margin-top: 1em;
     position: absolute;
 width: 375px;
 height: 352px;
 left: 0px;
 background: #f2f2f2;
-overflow-x: hidden;
+overflow: hidden;
 }
 
 .footericon{
@@ -105,9 +106,17 @@ border: 1px solid #000000;
 }
 
 .icons{
-    width: 37px;
-    padding-top: 280px;
+    width: 80px;
+    padding-top: 20px;
     margin: 0 15px;
+}
+
+.icons2{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    top: 270px;
+    left: -10px;
 }
 
 .icons:first-child{

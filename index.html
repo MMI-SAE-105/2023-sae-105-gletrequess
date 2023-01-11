@@ -10,6 +10,8 @@
     <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js%22%3E"></script>
     <!-- Importation Alpine.js /!\ À IMPORTE APRÈS X-COLLAPSE-->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Tailwind css -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./src/css/style.css">
     
 </head>
@@ -17,11 +19,18 @@
     <header>
         <a href="./index.html"><img class="icon" src="./public/img/Header/Icone.svg" alt="Icône du site"></a>
         <a href="./index_ENG.html"><img class="fricon" src="./public/img/Header/france 1.webp" alt="Icône de France"></a>
+        <div x-data="{ open: false }">
+            <button @click="open = !open">Menu</button>
+            <ul x-show="open" @click.away="open = false">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
             </ul>
           </div>
+          
     </header>
 
-    <div class="img_container">
+    <div class="img_container1">
         <img src="./public/img/Accueil/accueil.webp" alt="Page de post-minimalisme">
         <div class="text_container">
             <p>
@@ -45,48 +54,113 @@
         </p>
     </div>
 
-    <div>
-        <img class="img_accueil" src="./public/img/Accueil/hamilton.webp" alt="Image d'Hamilton">
-        <h3>Ann Hamilton</h3>
-        <p>
-            Découvrez l’une des pionnières du mouvement post-minimaliste dans son article dédié.
-        </p>
-        <button class="black-button">En savoir plus...</button>
-    </div>
 
-    <div>
-        <img class="img_accueil" src="./public/img/Accueil/kappor.webp" alt="Image de Kapoor">
-        <h3>Anish Kapoor</h3>
-        <p>
-            Anish Kapoor, sculpteur britannique, enseignant à Wolverhampton Polytechnic.
-        </p>
-        <button class="black-button">En savoir plus...</button>
-    </div>
+    <div class="img_container2">
+        <img src="./public/img/Accueil/hamilton.webp" alt="Image de Kapoor">
+        <div class="overlay">
+          <div class="text-container">
+            <h3>Ann Hamilton</h3>
+            <p>Découvrez l’une des pionnières du mouvement post-minimaliste dans son article dédié..</p>
+            <button class="black-button">En savoir plus...</button>
+          </div>
+        </div>
+      </div>
 
-    <div>
-        <img class="img_accueil" src="./public/img/Accueil/hatoum.webp" alt="Image de Mona Hatoum">
-        <h3>Mona Hatoum</h3>
-        <p>
-            Mona Hatoum, ancienne étudiante de la Byam Shaw School of Art de 1975 à 1981.
-        </p>
-        <button class="black-button">En savoir plus...</button>
-    </div>
+    <div class="image-container">
+        <img src="./public/img/Accueil/kappor.webp" alt="Image de Kapoor">
+        <div class="overlay">
+          <div class="text-container">
+            <h3>Anish Kapoor</h3>
+            <p>Anish Kapoor, sculpteur britannique, enseignant à Wolverhampton Polytechnic.</p>
+            <button class="black-button">En savoir plus...</button>
+          </div>
+        </div>
+      </div>
 
-    <div>
-        <img class="img_accueil" src="./public/img/Accueil/serra.webp" alt="Image de Mona Hatoum">
-        <h3>Richard Serra</h3>
-        <p>
-            Artiste d’art contemporain américain, anciennement marié à Nancy Graves.
-        </p>
-        <button class="black-button">En savoir plus...</button>
+     <div class="image-container">
+        <img src="./public/img/Accueil/hatoum.webp" alt="Image de Mona Hatoum">
+        <div class="overlay">
+          <div class="text-container">
+            <h3>Mona Hatoum</h3>
+            <p>Mona Hatoum, ancienne étudiante de la Byam Shaw School of Art de 1975 à 1981.</p>
+            <button class="black-button">En savoir plus...</button>
+          </div>
+        </div>
+      </div>
+
+    <div class="marginimagearticle2">
+     <div class="image-container">
+       <img src="./public/img/Accueil/serra.webp" alt="Image de Serra">
+       <div class="overlay">
+         <div class="text-container">
+           <h3>Richard Serra</h3>
+           <p>Artiste d’art contemporain américain, anciennement marié à Nancy Graves.</p>
+           <button class="black-button">En savoir plus...</button>
+         </div>
+       </div>
+     </div>
     </div>
 
     <hr>
 
     <h3>Informations complémentaires</h3>
-    <p>Texte</p><span></span>
-    <span><p>Tarifs</p></span>
-    <span><p>Lieu et Dates</p></span>
+
+    <div x-data="accordion" class="w-full max-w-lg mx-auto space-y-4">
+        <!-- Accordion 1 -->
+        <div class="w-full bg-white shadow-md rounded-md">
+            <!-- Head -->
+            <div @click="selected != 1 ? selected = 1 : selected =null"
+                class="flex justify-between items-center shadow-md px-2">
+                <h3 class="font-medium text-gray-800 py-2">Lieux et horaires</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" x-bind:class="selected == 1? 'transform rotate-180':''"
+                    class="h-5 w-5 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <!-- Content -->
+            <div class="max-h-0 overflow-hidden transition-all duration-300" x-ref="tab1"
+                :style="selected == 1 ? 'max-height: '+ $refs.tab1.scrollHeight+ 'px;':''">
+                <p class="p-2 text-justify">Cette exposition aura lieu à la Fondation Cartier, 261 Bd Raspail, 75014 Paris.
+                    Elle sera ouverte ous les jours de 11h à 20h, sauf le lundi. Nocturne le mardi, jusqu'à 22h. La fermeture des salles débute à 19h45 (21h45 les mardis).
+                </p>
+            </div>
+        </div>
+        <!-- Accordion 2 -->
+        <div class="w-full bg-white shadow-md rounded-md">
+            <!-- Head -->
+            <div @click="selected != 2 ? selected = 2 : selected =null"
+                class="flex justify-between items-center shadow-md px-2">
+                <h3 class="font-medium text-gray-800 py-2">Tarifs</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" x-bind:class="selected == 2? 'transform rotate-180':''"
+                    class="h-5 w-5 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <!-- Content -->
+            <div class="max-h-0 overflow-hidden transition-all duration-300" x-ref="tab2"
+                :style="selected == 2 ? 'max-height: '+ $refs.tab2.scrollHeight+ 'px;':''">
+                <p class="p-2 text-justify">
+                    <ol>
+                        <li>Plein tarif ⇒ 11€</li>
+                        <li>Tarif réduit ⇒ 7,50€</li>
+                        <li>Réduction 13 - 25 ans ⇒ 5€</li>
+                        <li>Fondation Cartier Pass ⇒ 18€ - 50€</li>
+                        <li>Moins de 13 ans, Laissez-passer annuel, carte Icom, carte de presse, carte d'invalidité, Fondation Cartier Pass, Etudiants ⇒ Gratuit</li>
+                    </ol>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function accordion() {
+            return {
+                selected: null
+            }
+        }
+    </script>
+
+    
 
     <footer>
         <div>
@@ -105,9 +179,12 @@
 
         <img class="ligne2" src="./public/img/Footer/line11.svg" alt="HR">
 
-        <a href="https://www.facebook.com/"><img class="icons" src="./public/icones/twitter.webp" alt="Twitter"></a>
-        <a href="https://twitter.com/"><img class="icons" src="./public/icones/facebook.webp" alt="Facebook"></a>
-        <a href="https://www.instagram.com/"><img class="icons" src="./public//icones/insta.webp" alt="Insta"></a>
+        <div class="icons2">
+            <a href="https://www.facebook.com/"><img class="icons" src="./public/icones/twitter.webp" alt="Twitter"></a>
+            <a href="https://twitter.com/"><img class="icons" src="./public/icones/facebook.webp" alt="Facebook"></a>
+            <a href="https://www.instagram.com/"><img class="icons" src="./public//icones/insta.webp" alt="Insta"></a>
+        </div>
+
     </footer>
 </body>
 </html>

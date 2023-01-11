@@ -18,6 +18,7 @@ footer a{
 body{
     padding-top: 100px;
     overflow-x: hidden;
+    margin: 0;
 }
 
 h1{
@@ -33,9 +34,17 @@ h2{
 h3{
     font-family: 'Arapey', sans-serif;
     font-size: 20px;
+    margin: 15px;
 }
 
 p{
     font-family: 'Arapey', sans-serif;
     font-size: 15px;
+    margin: 20px;
+}
+
+li{
+    font-family: 'Arapey', sans-serif;
+    font-size: 15px;
+    margin: 20px;
 }
