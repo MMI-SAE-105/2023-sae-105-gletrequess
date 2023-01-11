@@ -111,62 +111,28 @@
 
     <h3>Informations complémentaires</h3>
 
-    <div x-data="accordion" class="w-full max-w-lg mx-auto space-y-4">
-        <!-- Accordion 1 -->
-        <div class="w-full bg-white shadow-md rounded-md">
-            <!-- Head -->
-            <div @click="selected != 1 ? selected = 1 : selected =null"
-                class="flex justify-between items-center shadow-md px-2">
-                <h3 class="font-medium text-gray-800 py-2">Lieux et horaires</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" x-bind:class="selected == 1? 'transform rotate-180':''"
-                    class="h-5 w-5 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </div>
-            <!-- Content -->
-            <div class="max-h-0 overflow-hidden transition-all duration-300" x-ref="tab1"
-                :style="selected == 1 ? 'max-height: '+ $refs.tab1.scrollHeight+ 'px;':''">
-                <p class="p-2 text-justify">Cette exposition aura lieu à la Fondation Cartier, 261 Bd Raspail, 75014 Paris.
+        <ul class="block w-11/12 my-4 mx-auto" x-data="{selected:null}">
+            <li class="flex align-center flex-col">
+                <h4 @click="selected !== 0 ? selected = 0 : selected = null"
+                    class="cursor-pointer px-5 py-3 bg-indigo-300 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3 rounded-t">Lieux et horaires</h4>
+                <p x-show="selected == 0" class="border py-4 px-2">
+                    Cette exposition aura lieu à la Fondation Cartier, 261 Bd Raspail, 75014 Paris.
                     Elle sera ouverte ous les jours de 11h à 20h, sauf le lundi. Nocturne le mardi, jusqu'à 22h. La fermeture des salles débute à 19h45 (21h45 les mardis).
                 </p>
-            </div>
-        </div>
-        <!-- Accordion 2 -->
-        <div class="w-full bg-white shadow-md rounded-md">
-            <!-- Head -->
-            <div @click="selected != 2 ? selected = 2 : selected =null"
-                class="flex justify-between items-center shadow-md px-2">
-                <h3 class="font-medium text-gray-800 py-2">Tarifs</h3>
-                <svg xmlns="http://www.w3.org/2000/svg" x-bind:class="selected == 2? 'transform rotate-180':''"
-                    class="h-5 w-5 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </div>
-            <!-- Content -->
-            <div class="max-h-0 overflow-hidden transition-all duration-300" x-ref="tab2"
-                :style="selected == 2 ? 'max-height: '+ $refs.tab2.scrollHeight+ 'px;':''">
-                <p class="p-2 text-justify">
-                    <ol>
-                        <li>Plein tarif ⇒ 11€</li>
-                        <li>Tarif réduit ⇒ 7,50€</li>
-                        <li>Réduction 13 - 25 ans ⇒ 5€</li>
-                        <li>Fondation Cartier Pass ⇒ 18€ - 50€</li>
-                        <li>Moins de 13 ans, Laissez-passer annuel, carte Icom, carte de presse, carte d'invalidité, Fondation Cartier Pass, Etudiants ⇒ Gratuit</li>
-                    </ol>
+            </li>
+            <li class="flex align-center flex-col">
+                <h4 @click="selected !== 1 ? selected = 1 : selected = null"
+                    class="cursor-pointer px-5 py-3 bg-indigo-400 text-white text-center inline-block hover:opacity-75 hover:shadow hover:-mb-3">Tarifs</h4>
+                <p x-show="selected == 1" class="border py-4 px-2">
+                    Plein tarif ⇒ 11€ 
+                    Tarif réduit ⇒ 7,50€
+                    Réduction 13 - 25 ans ⇒ 5€
+                    Fondation Cartier Pass ⇒ 18€ - 50€
+                    Moins de 13 ans, Laissez-passer annuel, carte Icom, carte de presse, carte d'invalidité, Fondation Cartier Pass, Etudiants ⇒ Gratuit
                 </p>
-            </div>
-        </div>
-    </div>
+            </li>
+        </ul>
 
-    <script>
-        function accordion() {
-            return {
-                selected: null
-            }
-        }
-    </script>
-
-    
 
     <footer>
         <div>

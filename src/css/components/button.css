@@ -14,3 +14,22 @@
     align-items: center;
     height: 100vh; /* pour prendre la hauteur de la page */
   }
+
+  .Contact label{
+    border: 10px;
+    color: black;
+    font-family: 'Arapey';
+  }
+
+  .Contact button{
+    border: 10px;
+    color: black;
+  }
+
+  .Contact h1{
+    text-align: center;
+  }
+
+  .Contact hr{
+    text-align: center;
+  }
