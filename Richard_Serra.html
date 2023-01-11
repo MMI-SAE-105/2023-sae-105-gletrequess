@@ -1,12 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="./img/squareicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Richard Serra | Nouvelle Ère</title>
+    <!-- Importation x-collapse /!\ À IMPORTER AVANT ALPINE.JS /!\-->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js%22%3E"></script>
+    <!-- Importation Alpine.js /!\ À IMPORTE APRÈS X-COLLAPSE-->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Tailwind css -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/style.css">
     
+</head>
+<body style="margin: 0; background: #f8f7f1" class="Artiste">
+    <header>
+        <a href="./index.html"><img class="icon" src="./public/img/Header/Icone.svg" alt="Icône du site"></a>
+        <a href="./index_ENG.html"><img class="fricon" src="./public/img/Header/france 1.webp" alt="Icône de France"></a>
+        <div x-data="{ open: false }">
+            <button @click="open = !open">         
+                 <div class="nav-toggle" onclick="documentElement.classList.toggle('menu-open')">
+                <div class="nav-toggle-bar"></div>
+            </div></button>
+            <ul class="menu" x-show="open" @click.away="open = false" x-transition.opacity.duration.300ms>
+              <li><a href="./Ann_Hamilton.html">Ann Hamilton</a></li>
+              <li><a href="./Anish_Kapoor.html">Anish Kapoor</a></li>
+              <li><a href="./Mona_Hatoum.html">Mona Hatoum</a></li>
+              <li><a href="./Richard_Serra.html">Richard Serra</a></li>
+              <li><a href="./Erreur404.html">Billetterie</a></li>
+            </ul>
+          </div>
+          
+    </header>
+
+    <div class="img_container1">
+        <img src="./public/img/Artistes/RichardSerra/Serra.webp" alt="Richard Serra">
+        <div class="text_container">
+            <p>
+                <h1>Richard Serra</h1>
+            </p>
+        </div>
+    </div>
+
+    <div>
+        <h3>Jeunesse :</h3>
+        <p>
+            Richard Serra est né en 1939 à San Francisco, en Californie. Il a passé une grande partie de son enfance à Sacramento, où il a commencé à s'intéresser à l'art. Il a étudié l'art à l'Université de Santa Barbara et à l'Université de Yale, où il a obtenu son diplôme en arts plastiques en 1964. Il a ensuite étudié en Europe, en suivant des cours à l'Ecole des Arts et Métiers de Copenhagen et en travaillant avec des artistes comme Ossip Zadkine à Paris.
+        </p>
+        <img src="./public/img/Artistes/RichardSerra/maxresdefault.jpg" alt="Hatoum">
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Carrière :</h3>
+        <p>
+            Richard Serra est un artiste américain connu pour ses sculptures en acier monumentales qui abordent des thèmes tels que l'espace, la mémoire et le temps. Il a commencé sa carrière dans les années 60, Il est considéré comme l'un des sculpteurs minimaliste et conceptuel les plus importants de l'après-guerre, Il a exposé dans des musées prestigieux et remporté de nombreux prix et distinctions. ses œuvres sont présentes dans les collections de musées importants à travers le monde.
+        </p>
+    </div>
+
+    <hr>
+
+    <div>
+        <h3>Oeuvres :</h3>
+
+        <div class="carrousel" x-data="{hrefCourant: '#ecran-1'}">
+            <button @click="const p = $refs.parent ; p.scrollLeft -= p.clientWidth" class="carrousel_btn carrousel_btn-avant" aria-label="slide précedant">&lt</button><button @click="const p = $refs.parent ; p.scrollLeft += p.clientWidth" class="carrousel_btn carrousel_btn-apres" aria-label="slide suivant">&gt</button>
+            <div class="carrousel_parent-ecrans" x-ref="parent" 
+                    @scroll.debounce.250ms.passive="
+            hrefCourant = '#'+
+                              [...$refs.parent.children]
+                               .find(e=>e.getBoundingClientRect().x>=0)
+                               .id
+                                                 "
+            >
+                <div id="ecran-1" class="carrousel_ecran">
+                    <figure>
+                        <img src="./public/img/Oeuvres/RichardSerra/oeuvre1.webp" alt="Oeuvre 1">
+                        <figcaption>2006</figcaption>
+                        <a href="./Richard_Serra_oeuvre1.html"><button class="black-button">En savoir plus...</button></a>
+                    </figure>
+                </div>
+                <div id="ecran-2" class="carrousel_ecran">
+                    <figure>
+                        <img src="./public/img/Oeuvres/RichardSerra/oeuvre2.webp" alt="Oeuvre 2">
+                        <figcaption>2015</figcaption>
+                        <a href="./Richard_Serra_oeuvre2.html"><button class="black-button">En savoir plus...</button></a>
+                    </figure>
+
+          
+    </div>
+
+    <footer>
+        <div>
+            <img class="footericon" src="./public/img/Accueil/Icone 2.webp" alt="Icône site">
+            <p class="footertexteicon">
+                L'Ère
+                Post‑minimaliste
+            </p>
+        </div>
+
+        <img class="ligne1" src="./public/img/Footer/line10.svg" alt="HR">
+
+        <a class="footertexte1" href="./index.html">Accueil</a>
+        <a class="footertexte2" href="./Erreur404.html">Billetterie</a>
+        <a class="footertexte3" href="./Contact_html">Contact</a>
+
+        <img class="ligne2" src="./public/img/Footer/line11.svg" alt="HR">
+
+        <div class="icons2">
+            <a href="https://www.facebook.com/"><img class="icons" src="./public/icones/twitter.webp" alt="Twitter"></a>
+            <a href="https://twitter.com/"><img class="icons" src="./public/icones/facebook.webp" alt="Facebook"></a>
+            <a href="https://www.instagram.com/"><img class="icons" src="./public//icones/insta.webp" alt="Insta"></a>
+        </div>
+
+    </footer>
 </body>
 </html>
